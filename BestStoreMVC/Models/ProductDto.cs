@@ -3,28 +3,24 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BestStoreMVC.Models
 {
-    public class Product
+    public class ProductDto
     {
-        public int Id { get; set; }
-
-        [MaxLength(100)]
+        [Required,MaxLength(100)]
         public string Name { get; set; } = "";
 
-        [MaxLength(100)]
+        [Required, MaxLength(100)]
         public string Brend { get; set; } = "";
 
-        [MaxLength(100)]
+        [Required, MaxLength(100)]
         public string Category { get; set; } = "";
 
-        [Precision(16,2)]
+        [Required]
         public decimal Price { get; set; }
 
-        [MaxLength(100)]
+        [Required]
         public string Description { get; set; } = "";
 
-        [MaxLength(100)]
-        public string ImageFileName { get; set; } = "";
-     
-        public DateTime CreatedAt { get; set; } 
+      
+        public IFormFile? ImageFile { get; set; }
     }
 }
